@@ -1,0 +1,41 @@
+<!-- cdkDropList:- it is used for the Drag and Drop purpose -->
+<!-- click on the mat-expansion-panel once drag and leave it, it is changing the Index position -->
+<div class="list" cdkDropList (cdkDropListDropped)="drop($event)">
+  <!-- mat-card:-This is used for all are placed on the card -->
+  <!-- Image,mat-button-toggle are placed on the card-->
+  <mat-card class="card" *ngFor="let user of users" cdkDrag>
+    <img
+      mat-card-image
+      [src]="type === 'product' ? user.image_url : user.image"
+    />
+
+    <!-- product grid title and selling price information placed on the mat-card -->
+    <mat-card-content *ngIf="type === 'product'">
+      <p>{{ user.title }}</p>
+      <h4>$ {{ user.selling_price }}</h4>
+    </mat-card-content>
+
+    <!-- mat-button-toggle is used for button purpose  -->
+    <mat-button-toggle-group
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+    >
+      <mat-button-toggle mat-raised-button>Upload </mat-button-toggle>
+      <mat-button-toggle (click)="openDialog()">Edit</mat-button-toggle>
+      <mat-button-toggle>
+        <mat-icon (click)="Delete()" matTooltip="Delete">delete</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-card>
+</div>
+<!-- mat-action-row:-This is Represents the actions panel at the bottom -->
+
+<mat-action-row fxLayout="row" fxLayoutAlign="end center">
+  <button mat-stroked-button color="primary">
+    <mat-icon matTooltip="Bookmarks">bookmarks</mat-icon>
+  </button>
+  <button mat-stroked-button color="primary">
+    <mat-icon matTooltip="Delete" (click)="DeleteExpansion()">delete</mat-icon>
+  </button>
+  <button mat-stroked-button color="primary">Hide</button>
+</mat-action-row>

@@ -1,0 +1,69 @@
+<!-- Mobile view  -->
+
+<div class="mobile-view">
+  <mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+      <button mat-button color="primary">Home</button>
+      <button mat-button color="primary">Service</button>
+      <button mat-button color="primary">contact</button>
+    </mat-drawer>
+
+    <div class="sidenav-content">
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon>menu</mat-icon>
+          </button>
+
+          <span> Vajro Test Store </span>
+
+          <span class="spacer"></span>
+          <mat-icon matBadge="3" matBadgeColor="warn"
+            >add_shopping_cart</mat-icon
+          >
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+
+    <!-- Virtual scrolling of the mobile  view  -->
+
+    <cdk-virtual-scroll-viewport itemSize="50" class="scroll">
+      <div class="list">
+        <div *ngFor="let values of all">
+          <div class="slider" *ngIf="values.type === 'carousel'">
+            <ui-carousel height="220px" width="300px">
+              <ui-carousel-item *ngFor="let user of values.users">
+                <img [src]="user.image" />
+              </ui-carousel-item>
+            </ui-carousel>
+          </div>
+
+          <div *ngIf="values.type === 'image'">
+            <div class="image" *ngFor="let user of values.users">
+              <img [src]="user.image" />
+            </div>
+          </div>
+
+          <div *ngIf="values.type === 'product'">
+            <span fxLayout="row" fxLayoutAlign="center center"
+              >New Arrivals</span
+            >
+
+            <div class="product-view">
+              <mat-card
+                class="product-inside-view"
+                *ngFor="let user of values.users"
+              >
+                <img mat-card-image [src]="user.image_url" />
+                <mat-card-content>
+                  <p>{{ user.title }}</p>
+                  <h4>$ {{ user.selling_price }}</h4>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </mat-drawer-container>
+</div>

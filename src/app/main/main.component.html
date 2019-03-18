@@ -1,0 +1,37 @@
+<!-- fxLayout:- it is used for the alignment purpose -->
+<div fxLayout="row" fxLayoutAlign="start center">
+  <section class="list">
+    <mat-accordion multi="false">
+      <!-- cdkDropList:- it is used for the Drag and Drop purpose -->
+      <!-- click on the mat-expansion-panel once drag and leave it, it is changing the Index position -->
+      <div cdkDropList (cdkDropListDropped)="drop($event)">
+        <!-- mat-expansion-panel:-This is used for expanding and Showing the information on the disply -->
+        <!-- click on the Customise button(or)mat-expansion-panel it is opened and showing 
+information-->
+        <mat-expansion-panel hideToggle cdkDrag *ngFor="let info of all">
+          <mat-expansion-panel-header>
+            <mat-panel-title fxLayout="row" fxLayoutAlign="start center">
+              <mat-icon>apps</mat-icon>
+              {{ info.title }}
+            </mat-panel-title>
+
+            <div>
+              <button mat-stroked-button color="primary">Customise</button>
+            </div>
+          </mat-expansion-panel-header>
+
+          <!-- get the common data from the child component(common-body) to parent component(main)  -->
+           <app-common-body
+            [(users)]="info.users"
+            [type]="info.type"
+          ></app-common-body>
+        </mat-expansion-panel>
+      </div>
+    </mat-accordion>
+  </section>
+</div>
+<!-- Mobile View displaying purpose-->
+ <!-- get the data from the sub.component to main.component  -->
+<div class="mobile-view" fxLayout="column" fxLayoutAlign="start end">
+  <app-sub [all]="all"></app-sub>
+</div>

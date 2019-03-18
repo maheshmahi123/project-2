@@ -1,0 +1,15 @@
+.card {
+    display: inline-grid;
+    max-width: 210px;
+  }
+  
+  img {
+    height: 240px;
+    width: 240px;
+  }
+  
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 20px;
+  }
