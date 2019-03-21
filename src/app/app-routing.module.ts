@@ -7,7 +7,7 @@ import { SubComponent } from "./sub/sub.component";
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "/main",
+    redirectTo : "/main",
     pathMatch: "full" 
   },
 

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-dialog',
@@ -8,7 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class EditDialogComponent implements OnInit {
 
-  constructor(public snackbar:MatSnackBar) { }
+  constructor(public snackbar:MatSnackBar, @Inject(MAT_DIALOG_DATA) public data: any) { }
+
 
   ngOnInit() {
   }

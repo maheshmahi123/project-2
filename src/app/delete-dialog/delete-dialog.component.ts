@@ -15,14 +15,14 @@ export class DeleteDialogComponent implements OnInit {
 
   // when you click on the (Yes, Delete it !)button it will be opened SnackBar
     deleteSnackBar(){
-     const snackbarRef = this.snackbar.open('Delete Sucessfully',' UNDO ',{
-     });
+     const snackbarRef = this.snackbar.open('Delete Sucessfully'
+     );
   }
 
   // when you click on the (Cancel)button it will be opened SnackBar
-  backSnackBar(){
-    const snackbarRef = this.snackbar.open(' Information canot delete', ' UNDO',{
-    });
+  backSnackBar (){
+    const snackbarRef = this.snackbar.open(' Information canot delete'
+    );
   }
 
 }

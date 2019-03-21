@@ -1,6 +1,6 @@
 export interface IList_items {
 
-  image: string,
+  image: string ,
 
   title: string ,
   selling_price: number,

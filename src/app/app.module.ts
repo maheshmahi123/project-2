@@ -17,14 +17,14 @@ import { HttpClientModule } from "@angular/common/http";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MatExpansionModule } from "@angular/material/expansion";
+import { MatExpansionModule }  from "@angular/material/expansion";
 import { MatButtonModule } from "@angular/material/button";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatDialogModule } from "@angular/material/dialog";
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
@@ -71,7 +71,8 @@ import { UICarouselModule } from "ui-carousel";
     MatBadgeModule,
     UICarouselModule,
     AppRoutingModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FormsModule,
 
   ],
   providers: [InfoService],

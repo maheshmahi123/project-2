@@ -8,7 +8,12 @@ import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
   styleUrls: ["./main.component.css"]
 })
 export class MainComponent implements OnInit {
+  step = 0;
 
+  setStep(index: number) {
+    this.step = index;
+  }
+  scope: any;
   // declaring the variables
   public users1;
   public users2;
@@ -32,7 +37,7 @@ export class MainComponent implements OnInit {
         { title: "Slider Images", users: this.users1, type: "carousel" },
         { title: "Image Grid", users: this.users2, type: "image" },
         { title: "Banner Images", users: this.users3, type: "image" },
-        { title: "Product Grid", users: this.users4, type: "product" },
+        { title: "Product Grid", users : this.users4, type: "product" },
         { title: "Instagram Grid", users: this.users5, type: "image" }
       ];
     });
@@ -41,5 +46,18 @@ export class MainComponent implements OnInit {
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.all, event.previousIndex, event.currentIndex);
     console.log(this.all);
+  }
+
+  prevStep() {
+    this.step--;
+  }
+
+  DeletePanel(index){
+    this.all = this.all.filter((users, i) => i !== index)
+  }
+
+  Bookmarks(index){
+    this.all = [...this.all, this.all[index]]
+
   }
 }

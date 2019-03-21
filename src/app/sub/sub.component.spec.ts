@@ -7,7 +7,7 @@ describe('SubComponent', () => {
   let fixture: ComponentFixture<SubComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
+    TestBed.configureTestingModule ({
       declarations: [ SubComponent ]
     })
     .compileComponents();

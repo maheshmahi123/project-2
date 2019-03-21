@@ -1,10 +1,10 @@
 
 
-<div class="position">
+<div class="position" >
     <mat-icon>error_outline</mat-icon>
     <h2>Are you sure?</h2>
     <p>You're about to delete an item from this widget. Are you sure you want to delete it?</p>
 <div mat-dialog-action fxLayout="row" fxLayoutAlign="space-evenly center"> 
-    <button mat-raised-button color="primary" (click)="deleteSnackBar()">Yes, Delete it !  </button>
-    <button mat-raised-button color="accent" (click)="backSnackBar()">Cancel </button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" (click)="deleteSnackBar()">Yes, Delete it !  </button>
+    <button mat-raised-button color="accent" mat-dialog-close (click)="backSnackBar()">Cancel </button>
 </div>

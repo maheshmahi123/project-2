@@ -41,11 +41,12 @@
           <div *ngIf="values.type === 'image'">
             <div class="image" *ngFor="let user of values.users">
               <img [src]="user.image" />
+              {{user.title}}
             </div>
           </div>
 
           <div *ngIf="values.type === 'product'">
-            <span fxLayout="row" fxLayoutAlign="center center"
+            <span fxLayout="row" fxLayoutAlign ="center center"
               >New Arrivals</span
             >
 

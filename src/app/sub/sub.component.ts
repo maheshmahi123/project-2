@@ -9,7 +9,7 @@ import { all } from 'q';
 export class SubComponent implements OnInit {
 
 
-  @Input() all;
+  @Input() all ;
 
   constructor() { }
 
