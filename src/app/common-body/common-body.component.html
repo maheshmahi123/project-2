@@ -7,10 +7,7 @@
     <div class="container" id="myid1" >
     <img
       mat-card-image
-      [src]="type === 'product' ? user.image_url : user.image"
-      style="widows: 100px;"
-    />
-    <div class="centered">centered</div>
+      [src]="type === 'product' ? user.image_url : user.image"/>
   </div>
     <!-- product grid title and selling price information placed on the mat-card -->
     <mat-card-content *ngIf="type === 'product'">

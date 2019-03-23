@@ -27,6 +27,39 @@
   width: 300px;
 }
 
+
+.style{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  padding: 4px;
+}
+.style .image_grid {
+  position: relative;
+}
+.style .image_grid img {
+  padding: 10px;
+  height: 130px;
+  width: 130px;
+}
+
+    .image_text{
+      position: absolute;
+      top: 50px; right: 0;
+      bottom: 0; left: 10px;
+      vertical-align: middle;
+      text-align: center;
+
+    }
+
+    .image_text h3{
+      color: chartreuse;
+      display: inline-table;
+      vertical-align: middle;
+      line-height: 100%;
+    }
+
+
+
 .image {
   display: inline;
   grid-template-columns: 100px 100px;
